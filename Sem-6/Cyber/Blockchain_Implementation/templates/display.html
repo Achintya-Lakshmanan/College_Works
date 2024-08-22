@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Page</title>
+    <link rel="stylesheet" type="text/css" href="./static/home.css">
+</head>
+<body>
+    <button id="title" onclick="window.location.href = '/';">WELCOME TO MemeCoin (Totally Not a Scam)</button>
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Recepient</th>
+                <th>Amount</th>
+                <th>Nonce</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.transaction.sender }}</td>
+                <td>{{ item.transaction.recepient }}</td>
+                <td>{{ item.transaction.amount }}</td>
+                <td>{{ item.proof }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</body>
+</html>
